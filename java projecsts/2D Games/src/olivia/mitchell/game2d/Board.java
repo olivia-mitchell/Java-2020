@@ -13,12 +13,13 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 public class Board extends JPanel{
 Image img;
-String location = "scr/res/image/ranch.jfif";
+String location = "src/res/image/download.png";
 	
 	private void loadImage() {
 		ImageIcon ii = new ImageIcon(location);
 		img = ii.getImage();
 	}
+	
 	
 	private void initBoard() {
 		loadImage();
@@ -27,13 +28,14 @@ String location = "scr/res/image/ranch.jfif";
 		setPreferredSize(new Dimension(w, h));
 	}
 
-	@Override
-	public void paintComponent(Graphics g) {
+@Override
+public void paintComponent(Graphics g) {
 		//super.paintComponent(g);
 		//drawShape(g);
 		g.drawImage(img, 0, 0, null);
 	}
-	private void drawShape(Graphics g) {
+	
+private void drawShape(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
@@ -58,7 +60,8 @@ String location = "scr/res/image/ranch.jfif";
 			g2d.draw(at.createTransformedShape(e));
 		}
 	}
-	public Board() {
+	
+public Board() {
 		initBoard();
 	}
 
